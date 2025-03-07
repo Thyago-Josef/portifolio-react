@@ -16,9 +16,11 @@ export default function Home() {
 
 
         <div className="quadro-cima">
-          <h1>Thyago Rodrigues</h1>
 
-          <div className="nome-centro">Olá,visitante!<p className="nome">Me chamo Thyago</p> sou um desenvolvedor Full Stack</div>
+
+          <div className="nome-centro">Olá,visitante!<br />
+            <p className="nome">Me chamo Thyago</p>
+            sou um desenvolvedor Full Stack</div>
 
           <div className="elementos-cima">
             <div className="contato">Contato</div>

@@ -11,11 +11,16 @@
 
 .nome{
   font-size: 50px;
-  align-items: center;
+  
 }
 
 .nome-centro{
-  text-align: center;
+  display: flex;
+  flex-direction: column; /* Garante que cada elemento fique em uma linha separada */
+  justify-content: center; /* Centraliza na vertical */
+  align-items: center; /* Centraliza na horizontal */
+  height: 100vh; /* Faz ocupar toda a tela */
+  text-align: center; /* Centraliza o texto */
 }
 
 
@@ -32,7 +37,7 @@ body {
   left: 0;
   height: 800px;
   width: 100%;
-  color: blue;
+  color: #f5f5f5;
   // webkit-font-smoothing: antialiased;
     font-family: 'Dennis Sans', sans-serif;
     // color: var(--color-text);
@@ -52,8 +57,14 @@ body {
   display: flex;
   gap: 20px; // Ajusta o espaço entre os itens
   padding: 10px;
-  // background-color: #fff; // Exemplo de cor de fundo
   border-radius: 8px; // Bordas arredondadas
+  color:#f5f5f5;
+  font-family: 'Dennis Sans', sans-serif;
+    line-height: 1.6;
+    font-weight: 450;
+    font-style: normal;
+    font-size: 16px;
+    font-size: clamp(16px, 1.2vw, 19px);
 
   .contato, .sobre, .home {
     cursor: pointer;
