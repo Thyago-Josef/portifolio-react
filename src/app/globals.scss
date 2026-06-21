@@ -682,10 +682,112 @@ body {
 // ============================================
 // FORMULÁRIO DE CONTATO
 // ============================================
-.contact-container {
-  max-width: 600px;
+.contact-wrapper {
+  max-width: 700px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+// Links diretos
+.contact-direct {
+  margin-bottom: 40px;
+
+  h3 {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+}
+
+.direct-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.direct-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  background: #fff;
+  border-radius: 12px;
+  text-decoration: none;
+  border: 1px solid #e0e0e0;
+  transition: var(--transicao-padrao);
+  min-width: 180px;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  &.whatsapp:hover {
+    border-color: #25D366;
+    background: #f0fdf4;
+  }
+
+  &.email:hover {
+    border-color: var(--cor-primaria);
+    background: #f8f9ff;
+  }
+
+  &.linkedin:hover {
+    border-color: #0077B5;
+    background: #f0f8ff;
+  }
+}
+
+.link-icon {
+  font-size: 28px;
+}
+
+.link-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.link-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.link-value {
+  font-size: 12px;
+  color: #666;
+}
+
+// Divisor
+.contact-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 40px;
+
+  &::before,
+  &::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #e0e0e0;
+  }
+
+  span {
+    font-size: 14px;
+    color: #999;
+    white-space: nowrap;
+  }
+}
+
+// Formulário
+.contact-container {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .contact-form {
@@ -702,43 +804,101 @@ body {
 
   label {
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 4px;
   }
 
   input,
   textarea {
-    padding: 14px 16px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    padding: 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
     font-size: 16px;
     font-family: inherit;
     transition: var(--transicao-padrao);
-    background-color: #fff;
+    background-color: #fafafa;
 
     &:focus {
       outline: none;
       border-color: var(--cor-primaria);
-      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+      box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+      background-color: #fff;
     }
 
     &::placeholder {
-      color: #999;
+      color: #aaa;
     }
   }
 
   textarea {
     resize: vertical;
-    min-height: 120px;
+    min-height: 140px;
+  }
+
+  &.has-error {
+    label {
+      color: #d32f2f;
+    }
+
+    input,
+    textarea {
+      border-color: #d32f2f;
+      background-color: #fff5f5;
+
+      &:focus {
+        box-shadow: 0 0 0 4px rgba(211, 47, 47, 0.1);
+      }
+    }
   }
 }
 
+.input-error {
+  border-color: #d32f2f !important;
+}
+
+.error-text {
+  font-size: 12px;
+  font-weight: 400;
+  color: #d32f2f;
+  margin-left: 8px;
+}
+
+.success-message {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  padding: 16px 20px;
+  border-radius: 10px;
+  margin-bottom: 24px;
+  font-weight: 500;
+  border: 1px solid #a5d6a7;
+}
+
+.success-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: #2e7d32;
+  color: white;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: bold;
+}
+
 .submit-button {
-  padding: 16px 32px;
+  padding: 18px 36px;
   background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
@@ -746,21 +906,12 @@ body {
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
   }
 
   &:active {
     transform: translateY(0);
   }
-}
-
-.success-message {
-  background-color: #4caf50;
-  color: white;
-  padding: 16px;
-  border-radius: 8px;
-  margin-bottom: 24px;
-  font-weight: 500;
 }
 
 // ============================================
@@ -870,6 +1021,16 @@ body {
     span:last-child {
       font-size: 10px;
     }
+  }
+
+  .direct-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .direct-link {
+    width: 100%;
+    max-width: 280px;
   }
 
   .elementos-cima {
