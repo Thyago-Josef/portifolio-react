@@ -16,18 +16,8 @@ export default function Home() {
             <FrameV>
               <h1>Bem vindo.</h1>
               <p>
-                Meu nome é Thyago José, tenho 35 anos. Sou um desenvolvedor
-                FullStack e Design. Possuo vasto conhecimento e experiência
-                com Desenvolvimento de aplicações web e mobile, assim como
-                também com designer gráfico em geral.
-              </p>
-              <p>
-                Se procura aplicações com velocidade e segurança, está no
-                lugar certo.
-              </p>
-              <p>
-                Sou apaixonado por interfaces modernas, pixel-perfect, bonitas
-                e intuitivamente implementadas.
+                Sou Thyago José, desenvolvedor Full Stack apaixonado por
+                interfaces modernas e performáticas.
               </p>
               <div className="hero-cta">
                 <a href="#projetos" className="cta-primary">Ver Projetos</a>
