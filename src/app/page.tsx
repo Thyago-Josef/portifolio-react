@@ -29,6 +29,11 @@ export default function Home() {
                 Sou apaixonado por interfaces modernas, pixel-perfect, bonitas
                 e intuitivamente implementadas.
               </p>
+              <div className="hero-cta">
+                <a href="#projetos" className="cta-primary">Ver Projetos</a>
+                <a href="#contato" className="cta-secondary">Fale Comigo</a>
+                <a href="/cv-thyago-jose.pdf" className="cta-outline" download>Baixar CV</a>
+              </div>
             </FrameV>
             <HeroVisual />
           </div>

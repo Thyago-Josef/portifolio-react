@@ -219,6 +219,62 @@ body {
 }
 
 // ============================================
+// CTA BUTTONS (HERO)
+// ============================================
+.hero-cta {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+
+  a {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 14px 28px;
+    border-radius: 8px;
+    transition: var(--transicao-padrao);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+.cta-primary {
+  background: linear-gradient(135deg, var(--cor-dourado), #b89400);
+  color: #000;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(212, 176, 0, 0.4);
+  }
+}
+
+.cta-secondary {
+  background: var(--cor-primaria);
+  color: #fff;
+
+  &:hover {
+    background: #5568d4;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+  }
+}
+
+.cta-outline {
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+  background: transparent;
+
+  &:hover {
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+  }
+}
+
+// ============================================
 // HERO VISUAL (LADO DIREITO)
 // ============================================
 .hero-visual {
@@ -632,6 +688,10 @@ body {
     }
   }
 
+  .hero-cta {
+    justify-content: center;
+  }
+
   .hero-visual {
     order: -1;
   }
@@ -653,6 +713,16 @@ body {
 @media (max-width: 768px) {
   .quadro-cima {
     padding: 100px 20px 60px;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    align-items: stretch;
+
+    a {
+      justify-content: center;
+      padding: 12px 24px;
+    }
   }
 
   .elementos-cima {
