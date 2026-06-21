@@ -2,6 +2,7 @@ import styles from "./page.module.css";
 import FrameV from "./components/FrameV";
 import Navbar from "./components/Navbar";
 import Contact from "./components/Contact";
+import HeroVisual from "./components/HeroVisual";
 
 export default function Home() {
   return (
@@ -11,23 +12,26 @@ export default function Home() {
 
         {/* Quadro Cima (Primeira seção) */}
         <section id="home" className="quadro-cima">
-          <FrameV>
-            <h1>Bem vindo.</h1>
-            <p>
-              Meu nome é Thyago José, tenho 35 anos. Sou um desenvolvedor
-              FullStack e Design. Possuo vasto conhecimento e experiência
-              com Desenvolvimento de aplicações web e mobile, assim como
-              também com designer gráfico em geral.
-            </p>
-            <p>
-              Se procura aplicações com velocidade e segurança, está no
-              lugar certo.
-            </p>
-            <p>
-              Sou apaixonado por interfaces modernas, pixel-perfect, bonitas
-              e intuitivamente implementadas.
-            </p>
-          </FrameV>
+          <div className="hero-grid">
+            <FrameV>
+              <h1>Bem vindo.</h1>
+              <p>
+                Meu nome é Thyago José, tenho 35 anos. Sou um desenvolvedor
+                FullStack e Design. Possuo vasto conhecimento e experiência
+                com Desenvolvimento de aplicações web e mobile, assim como
+                também com designer gráfico em geral.
+              </p>
+              <p>
+                Se procura aplicações com velocidade e segurança, está no
+                lugar certo.
+              </p>
+              <p>
+                Sou apaixonado por interfaces modernas, pixel-perfect, bonitas
+                e intuitivamente implementadas.
+              </p>
+            </FrameV>
+            <HeroVisual />
+          </div>
         </section>
 
         {/* Seção Sobre Mim */}
