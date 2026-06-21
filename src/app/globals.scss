@@ -1,104 +1,526 @@
+// ============================================
+// VARIÁVEIS
+// ============================================
 :root {
- 
+  --cor-primaria: #667eea;
+  --cor-secundaria: #764ba2;
+  --cor-texto: #ffffff;
+  --cor-fundo-escuro: #030303;
+  --cor-fundo-section: #0e0e0e;
+  --cor-dourado: #d4b000;
+  --transicao-padrao: 0.3s ease;
 }
 
-
+// ============================================
+// RESET E ESTILOS BASE
+// ============================================
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
- 
 }
-
-.nome{
-  font-size: 50px;
-  
-}
-
-.nome-centro{
-  display: flex;
-  flex-direction: column; /* Garante que cada elemento fique em uma linha separada */
-  justify-content: center; /* Centraliza na vertical */
-  align-items: center; /* Centraliza na horizontal */
-  height: 100vh; /* Faz ocupar toda a tela */
-  text-align: center; /* Centraliza o texto */
-}
-
 
 html,
 body {
   margin: 0;
   padding: 0;
-  font-family: "Inter", sans-serif;
-  background-color: #f5f5f5;
-  // width: 100vw;
-  // height: 100vh;
-  height: 100%; /* Garante que o corpo ocupe a altura total da tela */
-  width: 100%; /* Garante que o corpo ocupe a largura total da tela */
-  overflow-x: hidden; 
+  font-family: 'Dennis Sans', 'Inter', sans-serif;
+  background-color: var(--cor-fundo-section);
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
-.quadro-cima {
-  background-color: #999D9E;
-  width: 100vw;
-  height: 100vh; /* Ocupa pelo menos a altura total da tela */
-  color: #f5f5f5;
-  display: flex;
-  font-family: 'Dennis Sans', sans-serif;
-  // display: flex;
-  // flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow-x: hidden; 
-  margin: 0;
-  padding: 0;
-
-}
-
+// ============================================
+// NAVBAR (ELEMENTOS-CIMA)
+// ============================================
 .elementos-cima {
-  position: absolute;
+  position: fixed;
   top: 0;
+  left: 0;
   right: 0;
+  background-color: var(--cor-fundo-escuro);
+  width: 100vw;
+  height: auto;
+  min-height: 60px;
   display: flex;
-  gap: 20px; // Ajusta o espaço entre os itens
-  padding: 10px;
-  border-radius: 8px; // Bordas arredondadas
-  color:#f5f5f5;
+  gap: 20px;
+  padding: 20px 40px;
+  color: #fffdfd;
   font-family: 'Dennis Sans', sans-serif;
-    line-height: 1.6;
-    font-weight: 450;
-    font-style: normal;
-    font-size: 16px;
-    font-size: clamp(16px, 1.2vw, 19px);
+  line-height: 1.6;
+  font-weight: 450;
+  font-size: clamp(14px, 1.2vw, 18px);
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 
-  .contato, .sobre, .home, .projetos {
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
     cursor: pointer;
-    padding: 10px 20px;
-   
+    padding: 10px;
+    z-index: 1001;
   }
 
-  
-.nome{
-  font-size: 50px;
-  
+  .hamburger {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #fffdfd;
+    position: relative;
+    transition: var(--transicao-padrao);
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 24px;
+      height: 2px;
+      background-color: #fffdfd;
+      transition: var(--transicao-padrao);
+    }
+
+    &::before {
+      top: -8px;
+    }
+
+    &::after {
+      top: 8px;
+    }
+
+    &.open {
+      background-color: transparent;
+
+      &::before {
+        top: 0;
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        top: 0;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  nav {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 15px;
+    margin-left: 20px;
+    padding-left: 20px;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+
+    a {
+      color: #fffdfd;
+      transition: var(--transicao-padrao);
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        color: var(--cor-dourado);
+        transform: translateY(-2px);
+      }
+    }
+  }
+
+  a,
+  .contato,
+  .sobre,
+  .home,
+  .projetos {
+    cursor: pointer;
+    padding: 10px 15px;
+    color: #fffdfd;
+    text-decoration: none;
+    transition: var(--transicao-padrao);
+    position: relative;
+    font-weight: 400;
+
+    &:hover {
+      color: var(--cor-dourado);
+    }
+  }
 }
 
-.nome-centro{
+// ============================================
+// SEÇÃO PRINCIPAL (QUADRO-CIMA)
+// ============================================
+.quadro-cima {
+  position: relative;
+  background-color: var(--cor-fundo-section);
+  width: 100vw;
+  min-height: 100vh;
   display: flex;
-  flex-direction: column; /* Garante que cada elemento fique em uma linha separada */
-  justify-content: center; /* Centraliza na vertical */
-  align-items: center; /* Centraliza na horizontal */
-  height: 100vh; /* Faz ocupar toda a tela */
-  text-align: center; /* Centraliza o texto */
-}
- 
+  justify-content: center;
+  align-items: center;
+  padding: 100px 20px 80px;
+  overflow: hidden;
 }
 
+// ============================================
+// MOLDURA EM "L" (FRAME-V)
+// ============================================
+.frame-v {
+  position: relative;
+  width: 60%;
+  max-width: 800px;
+  height: auto;
+  min-height: 564px;
+  background: transparent;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0;
+  margin-left: 10%;
+
+  .conteudo-frame {
+    position: relative;
+    z-index: 2;
+    padding: 60px 80px;
+    width: 100%;
+
+    h1 {
+      font-size: clamp(48px, 7vw, 96px);
+      font-weight: 300;
+      margin-bottom: 30px;
+      color: #ffffff;
+      line-height: 1.1;
+    }
+
+    p {
+      font-size: clamp(14px, 1.2vw, 18px);
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 15px;
+      max-width: 600px;
+    }
+  }
+}
+
+/* Molduras em L - Canto Superior Esquerdo e Inferior Direito */
+.moldura-superior-esquerda::before,
+.moldura-superior-esquerda::after {
+  content: "";
+  position: absolute;
+  background: var(--cor-dourado);
+  z-index: 3;
+}
+
+/* Barra horizontal superior */
+.moldura-superior-esquerda::before {
+  top: 0;
+  left: 0;
+  width: 35%;
+  height: 3px;
+}
+
+/* Barra vertical esquerda */
+.moldura-superior-esquerda::after {
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 35%;
+}
+
+.moldura-inferior-direita::before,
+.moldura-inferior-direita::after {
+  content: "";
+  position: absolute;
+  background: var(--cor-dourado);
+  z-index: 3;
+}
+
+/* Barra horizontal inferior */
+.moldura-inferior-direita::before {
+  bottom: 0;
+  right: 0;
+  width: 35%;
+  height: 3px;
+}
+
+/* Barra vertical direita */
+.moldura-inferior-direita::after {
+  bottom: 0;
+  right: 0;
+  width: 3px;
+  height: 35%;
+}
+
+// ============================================
+// SEÇÃO SOBRE MIM
+// ============================================
 .sobre-mim {
-  padding: 40px;
+  padding: 80px 40px 40px;
   text-align: center;
   color: #030303;
   width: 100%;
-  min-height: 400px; /* Garante um tamanho mínimo */
+  min-height: 500px;
+  background-color: #ffffff;
 
+  h2 {
+    font-size: clamp(32px, 5vw, 48px);
+    margin-bottom: 40px;
+    color: #1a1a1a;
+  }
+
+  p {
+    font-size: clamp(16px, 1.2vw, 20px);
+    line-height: 1.8;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #333;
+  }
+}
+
+// ============================================
+// SEÇÕES PROJETOS E CONTATO
+// ============================================
+.projetos-secao,
+.contato-secao {
+  min-height: 50vh;
+  padding: 80px 40px 40px;
+  text-align: center;
+  background-color: #f5f5f5;
+
+  h2 {
+    font-size: clamp(32px, 5vw, 48px);
+    margin-bottom: 30px;
+    color: #1a1a1a;
+  }
+
+  p {
+    font-size: clamp(16px, 1.2vw, 20px);
+    color: #666;
+    margin-bottom: 40px;
+  }
+}
+
+// ============================================
+// FORMULÁRIO DE CONTATO
+// ============================================
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+
+  label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+  }
+
+  input,
+  textarea {
+    padding: 14px 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: inherit;
+    transition: var(--transicao-padrao);
+    background-color: #fff;
+
+    &:focus {
+      outline: none;
+      border-color: var(--cor-primaria);
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+
+    &::placeholder {
+      color: #999;
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+}
+
+.submit-button {
+  padding: 16px 32px;
+  background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transicao-padrao);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.success-message {
+  background-color: #4caf50;
+  color: white;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+// ============================================
+// ANIMAÇÕES FADE-IN
+// ============================================
+.fade-in-text,
+.fade-in-container {
+  opacity: 0;
+  transition: opacity 2s ease-in;
+}
+
+.fade-in-text.visible {
+  opacity: 1;
+  font-size: clamp(40px, 6vw, 70px);
+  color: #1a1a1a;
+}
+
+.fade-in-container.visible {
+  opacity: 1;
+  color: #fffdfd;
+  font-size: clamp(18px, 1.5vw, 24px);
+}
+
+// ============================================
+// RESPONSIVIDADE
+// ============================================
+@media (max-width: 768px) {
+  .elementos-cima {
+    padding: 15px 20px;
+    justify-content: space-between;
+
+    .menu-toggle {
+      display: block;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 70%;
+      height: 100vh;
+      background-color: var(--cor-fundo-escuro);
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+      padding: 60px 40px;
+      transition: var(--transicao-padrao);
+      box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+
+      &.nav-open {
+        right: 0;
+      }
+    }
+
+    .social-links {
+      margin-left: 0;
+      padding-left: 0;
+      border-left: none;
+      margin-top: 30px;
+      justify-content: center;
+    }
+
+    a,
+    .contato,
+    .sobre,
+    .home,
+    .projetos {
+      padding: 12px 20px;
+      font-size: 18px;
+    }
+  }
+
+  .frame-v {
+    width: 90%;
+    margin-left: 5%;
+
+    .conteudo-frame {
+      padding: 40px 30px;
+
+      h1 {
+        font-size: 48px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .quadro-cima {
+    padding-top: 80px;
+    padding-left: 0;
+    justify-content: center;
+  }
+
+  .sobre-mim,
+  .projetos-secao,
+  .contato-secao {
+    padding: 60px 20px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .elementos-cima {
+    nav {
+      width: 100%;
+      right: -100%;
+      gap: 15px;
+    }
+
+    a,
+    .contato,
+    .sobre,
+    .home,
+    .projetos {
+      padding: 10px 15px;
+      font-size: 16px;
+    }
+  }
+
+  .frame-v {
+    width: 95%;
+    margin-left: 2.5%;
+
+    .conteudo-frame {
+      padding: 30px 20px;
+
+      h1 {
+        font-size: 36px;
+      }
+    }
+  }
 }
