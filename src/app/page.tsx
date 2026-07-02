@@ -7,6 +7,14 @@ import ProjectCard from "./components/ProjectCard";
 
 const projects = [
   {
+    title: "Conversor de PDF",
+    description: "Sistema completo de conversão de documentos com arquitetura de microsserviços. Autenticação JWT, processamento assíncrono via RabbitMQ, planos de assinatura e gateway de pagamento integrado.",
+    stack: ["Java", "Spring Boot", "Python", "Flask", "React", "Docker", "RabbitMQ"],
+    image: "/projects/pdf-converter.jpg",
+    isProprietary: false,
+    repoUrl: "https://github.com/Thyago-Josef/app-pdf"
+  },
+  {
     title: "Sistema de Gestão Empresarial",
     description: "Plataforma completa para gestão de estoque, vendas e financeiro com relatórios em tempo real.",
     stack: ["React", "Node.js", "PostgreSQL", "TypeScript"],
