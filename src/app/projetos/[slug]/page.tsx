@@ -71,15 +71,24 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       </header>
 
       <main className="project-content">
-        {project.image && (
-          <section className="project-image-section">
-            <div className="project-image-container">
-              <div className="project-image-placeholder">
-                <span>Imagem do Projeto</span>
-              </div>
+        {project.gallery && project.gallery.length > 0 ? (
+          <section className="project-gallery">
+            <h2>Galeria</h2>
+            <div className="gallery-grid">
+              {project.gallery.map((img, i) => (
+                <div key={i} className="gallery-item">
+                  <img src={img} alt={`${project.title} - ${i + 1}`} />
+                </div>
+              ))}
             </div>
           </section>
-        )}
+        ) : project.image ? (
+          <section className="project-image-section">
+            <div className="project-image-container">
+              <img src={project.image} alt={project.title} />
+            </div>
+          </section>
+        ) : null}
 
         <section className="project-about">
           <h2>Sobre o Projeto</h2>

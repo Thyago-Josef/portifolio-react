@@ -5,6 +5,7 @@ export interface Project {
   longDescription: string;
   stack: string[];
   image: string;
+  gallery?: string[];
   isProprietary: boolean;
   repoUrl?: string;
   features?: string[];
@@ -19,7 +20,13 @@ export const projects: Project[] = [
     description: "Sistema completo de conversão de documentos com arquitetura de microsserviços. Autenticação JWT, processamento assíncrono via RabbitMQ, planos de assinatura e gateway de pagamento integrado.",
     longDescription: "Plataforma full-stack para conversão de documentos PDF para múltiplos formatos (imagens, Word, HTML). Desenvolvida com arquitetura de microsserviços, onde o backend Java gerencia autenticação, filas e pagamentos, enquanto um microserviço Python specialize em processamento de PDF de alta qualidade.",
     stack: ["Java", "Spring Boot", "Python", "Flask", "React", "Docker", "RabbitMQ"],
-    image: "/projects/pdf-converter.jpg",
+    image: "/projects/pdf-converter-dashboard.png",
+    gallery: [
+      "/projects/pdf-converter-dashboard.png",
+      "/projects/pdf-converter-login.png",
+      "/projects/pdf-converter-home.png",
+      "/projects/pdf-converter-planos.png",
+    ],
     isProprietary: false,
     repoUrl: "https://github.com/Thyago-Josef/app-pdf",
     features: [
