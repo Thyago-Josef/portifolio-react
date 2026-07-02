@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { projects, getProjectBySlug } from '@/app/data/projects';
+import ProjectGallery from '@/app/components/ProjectGallery';
 
 interface ProjectPageProps {
   params: Promise<{ slug: string }>;
@@ -72,16 +73,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
       <main className="project-content">
         {project.gallery && project.gallery.length > 0 ? (
-          <section className="project-gallery">
-            <h2>Galeria</h2>
-            <div className="gallery-grid">
-              {project.gallery.map((img, i) => (
-                <div key={i} className="gallery-item">
-                  <img src={img} alt={`${project.title} - ${i + 1}`} />
-                </div>
-              ))}
-            </div>
-          </section>
+          <ProjectGallery images={project.gallery} title={project.title} />
         ) : project.image ? (
           <section className="project-image-section">
             <div className="project-image-container">
