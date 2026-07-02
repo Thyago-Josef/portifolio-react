@@ -4,45 +4,7 @@ import Navbar from "./components/Navbar";
 import Contact from "./components/Contact";
 import HeroVisual from "./components/HeroVisual";
 import ProjectCard from "./components/ProjectCard";
-
-const projects = [
-  {
-    title: "Conversor de PDF",
-    description: "Sistema completo de conversão de documentos com arquitetura de microsserviços. Autenticação JWT, processamento assíncrono via RabbitMQ, planos de assinatura e gateway de pagamento integrado.",
-    stack: ["Java", "Spring Boot", "Python", "Flask", "React", "Docker", "RabbitMQ"],
-    image: "/projects/pdf-converter.jpg",
-    isProprietary: false,
-    repoUrl: "https://github.com/Thyago-Josef/app-pdf"
-  },
-  {
-    title: "Sistema de Gestão Empresarial",
-    description: "Plataforma completa para gestão de estoque, vendas e financeiro com relatórios em tempo real.",
-    stack: ["React", "Node.js", "PostgreSQL", "TypeScript"],
-    image: "/projects/gestao-empresarial.jpg",
-    isProprietary: true
-  },
-  {
-    title: "App de Delivery",
-    description: "Aplicativo mobile para pedidos com rastreamento em tempo real e sistema de pagamentos integrado.",
-    stack: ["React Native", "Django", "Redis", "Docker"],
-    image: "/projects/delivery-app.jpg",
-    isProprietary: true
-  },
-  {
-    title: "Portal de E-learning",
-    description: "Plataforma de cursos online com aulas ao vivo, quizzes interativos e certificados automáticos.",
-    stack: ["Next.js", "Spring Boot", "MongoDB", "AWS"],
-    image: "/projects/elearning.jpg",
-    isProprietary: true
-  },
-  {
-    title: "Dashboard Analítico",
-    description: "Painel de métricas com gráficos dinâmicos, exportação de relatórios e alertas configuráveis.",
-    stack: ["Angular", "Java", "MySQL", "Chart.js"],
-    image: "/projects/dashboard.jpg",
-    isProprietary: true
-  }
-];
+import { projects } from "./data/projects";
 
 export default function Home() {
   return (
