@@ -47,9 +47,9 @@ export const projects: Project[] = [
   {
     slug: "site-curso",
     title: "Site de Curso",
-    description: "Plataforma institucional para escola de cursos profissionalizantes com páginas de cursos, planos, sobre e área de vídeos.",
-    longDescription: "Site completo para divulgação de cursos profissionalizantes, com página inicial, catálogo de cursos, planos de assinatura, sobre a escola e área de vídeos exclusiva para alunos. Design moderno e responsivo focado em conversão.",
-    stack: ["React", "TypeScript", "CSS Modules", "Vite"],
+    description: "Marketplace de cursos profissionalizantes com CMS dinâmico, carrinho de compras e painel administrativo completo.",
+    longDescription: "Plataforma completa para uma escola de cursos profissionalizantes, funcionando como um marketplace de cursos com gerenciamento dinâmico de conteúdo. O sistema conta com catálogo de cursos gerenciável via CMS, carrinho de compras, planos de assinatura, área de vídeos exclusiva para alunos e um painel administrativo completo para controle de cursos, usuários e vendas. Design moderno e responsivo focado em conversão e experiência do usuário.",
+    stack: ["React", "TypeScript", "CSS Modules", "Vite", "CMS"],
     image: "/projects/curso-web/home.png",
     gallery: [
       "/projects/curso-web/home.png",
@@ -59,19 +59,19 @@ export const projects: Project[] = [
       "/projects/curso-web/videos.png",
     ],
     isProprietary: false,
-    repoUrl: "https://github.com/Thyago-Josef/site-curso",
+    repoUrl: "https://github.com/Thyago-Josef/site-market-curso",
     features: [
-      "Página inicial com hero section e chamada para ação",
-      "Catálogo de cursos com categorias e detalhes",
+      "Marketplace de cursos com CMS para gerenciamento dinâmico",
+      "Catálogo de cursos com categorias e busca",
+      "Carrinho de compras completo",
       "Planos de assinatura com tabela comparativa",
-      "Página sobre com missão, visão e valores",
       "Área de vídeos exclusiva para alunos matriculados",
-      "Design responsivo e otimizado para mobile",
-      "Formulário de contato com validação",
-      "Integração com redes sociais"
+      "Painel administrativo para controle de cursos, usuários e vendas",
+      "Páginas CMS-dinâmicas (sobre, contato, etc.)",
+      "Design responsivo e otimizado para mobile"
     ],
-    challenges: "O principal desafio foi criar uma experiência fluida entre as páginas, mantendo a identidade visual consistente e garantindo que o site fosse leve e rápido mesmo com múltiplas seções e imagens.",
-    architecture: "React + Vite → Roteamento SPA → CSS Modules"
+    challenges: "O maior desafio foi desenvolver um CMS dinâmico que permitisse à equipe da escola gerenciar todo o conteúdo do site — cursos, páginas institucionais e planos — sem precisar de conhecimento técnico, tudo integrado a um carrinho de compras funcional e painel administrativo.",
+    architecture: "React + Vite → CMS dinâmico → Roteamento SPA"
   },
   {
     slug: "app-delivery",
