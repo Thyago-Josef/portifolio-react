@@ -102,7 +102,7 @@ export default function Contact() {
             </div>
           </a>
           <a
-            href="https://linkedin.com/in/seu-usuario"
+            href="https://www.linkedin.com/in/thyagojosenascimento/"
             target="_blank"
             rel="noopener noreferrer"
             className="direct-link linkedin"
