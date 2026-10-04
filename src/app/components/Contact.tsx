@@ -80,7 +80,7 @@ export default function Contact() {
         <h3>Ou entre em contato diretamente</h3>
         <div className="direct-links">
           <a
-            href="https://wa.me/55SEUNUMERO"
+            href="https://wa.me/5521966157428?text=Ol%C3%A1%21%20Vi%20o%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar."
             target="_blank"
             rel="noopener noreferrer"
             className="direct-link whatsapp"
