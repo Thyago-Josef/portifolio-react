@@ -1,0 +1,81 @@
+// ============================================
+// SERVIÇOS, MODELOS E BIOS (vendas)
+// ============================================
+.servicos-secao,
+.modelos-secao {
+  padding: 80px max(24px, 6vw);
+  background-color: var(--cor-fundo-section);
+  color: var(--cor-texto);
+
+  h2 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); margin-bottom: 12px; }
+  .servicos-desc { color: rgba(255, 255, 255, 0.7); max-width: 60ch; margin-bottom: 32px; }
+}
+
+.servico-linha {
+  display: grid;
+  grid-template-columns: 1.2fr 1.2fr 0.9fr;
+  gap: 32px;
+  align-items: start;
+  padding: 28px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+  &.destaque { border-top: 3px solid var(--cor-primaria); }
+  h3 { font-size: 1.4rem; margin-bottom: 8px; }
+  p { color: rgba(255, 255, 255, 0.7); }
+  ul { padding-left: 18px; display: grid; gap: 6px; }
+  .servico-preco { display: grid; gap: 12px; justify-items: start; strong { font-size: 1.1rem; } }
+}
+
+// Botão dos serviços (a classe .cta-primary só funciona dentro do hero)
+.servico-botao {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 8px;
+  background: var(--cor-dourado);
+  color: #000;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform var(--transicao-padrao), filter var(--transicao-padrao);
+
+  &:hover,
+  &:focus-visible { transform: translateY(-2px); filter: brightness(1.1); }
+}
+
+.modelos-lista {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+
+  a {
+    display: grid; gap: 4px; padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 12px;
+    color: var(--cor-texto); text-decoration: none;
+    transition: border-color var(--transicao-padrao);
+    &:hover, &:focus-visible { border-color: var(--cor-primaria); }
+    span { color: rgba(255, 255, 255, 0.6); font-size: 0.9rem; }
+  }
+}
+
+.bio-page {
+  min-height: 100vh; display: grid; place-items: center; padding: 24px;
+  background: var(--cor-fundo-escuro); color: var(--cor-texto);
+}
+.bio-card {
+  width: 100%; max-width: 420px; display: grid; gap: 12px; text-align: center;
+  h1 { font-size: 1.5rem; }
+  p { color: rgba(255, 255, 255, 0.7); margin-bottom: 12px; }
+}
+.bio-avatar {
+  width: 84px; height: 84px; border-radius: 50%; display: grid; place-items: center;
+  margin: 0 auto; font-size: 1.8rem; font-weight: 700; color: #fff;
+}
+.bio-btn {
+  display: block; padding: 14px 16px; border-radius: 12px; font-weight: 600;
+  color: #fff; text-decoration: none; text-align: center;
+  &.alt { background: transparent; border: 1px solid rgba(255, 255, 255, 0.25); }
+}
+
+@media (max-width: 820px) {
+  .servico-linha { grid-template-columns: 1fr; gap: 16px; }
+}

@@ -21,7 +21,7 @@ export default function Servicos() {
             </ul>
             <div className="servico-preco">
               <strong>{sv.preco}</strong>
-              <a className="cta-primary" href={zap(`Olá! Tenho interesse em: ${sv.nome}.`)}>
+              <a className="servico-botao" href={zap(`Olá! Tenho interesse em: ${sv.nome}.`)}>
                 Pedir orçamento
               </a>
             </div>
