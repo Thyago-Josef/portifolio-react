@@ -5,6 +5,9 @@ import Contact from "./components/Contact";
 import HeroVisual from "./components/HeroVisual";
 import ProjectCard from "./components/ProjectCard";
 import { projects } from "./data/projects";
+import Servicos from "./components/Servicos";
+import Modelos from "./components/Modelos";
+import { zap } from "./data/services";
 
 export default function Home() {
   return (
@@ -16,20 +19,23 @@ export default function Home() {
         <section id="home" className="quadro-cima">
           <div className="hero-grid">
             <FrameV>
-              <h1>Bem vindo.</h1>
+              <h1>Seu negócio inteiro em um link que vende.</h1>
               <p>
-                Sou Thyago José, desenvolvedor Full Stack apaixonado por
-                interfaces modernas e performáticas.
+                Sou Thyago José, desenvolvedor Full Stack. Crio bios
+                profissionais, sites e sistemas para pequenos negócios que
+                querem ser encontrados e chamados no WhatsApp.
               </p>
               <div className="hero-cta">
-                <a href="#projetos" className="cta-primary">Ver Projetos</a>
-                <a href="#contato" className="cta-secondary">Fale Comigo</a>
-                <a href="/cv-thyago-jose.pdf" className="cta-outline" download>Baixar CV</a>
+                <a href={zap("Olá! Quero um orçamento.")} className="cta-primary">Pedir orçamento</a>
+                <a href="#modelos" className="cta-secondary">Ver modelos de bio</a>
               </div>
             </FrameV>
             <HeroVisual />
           </div>
         </section>
+
+        <Servicos />
+        <Modelos />
 
         {/* Seção Sobre Mim */}
         <section id="sobre" className="sobre-mim">
